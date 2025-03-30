@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package calculatorpb.v1;
+
+option go_package = "github.com/YusJade/gocalculator/genproto";
+
+service CalculatorService {
+  rpc Calculate(CalculateRequest) returns (CalculateResponse);
+}
+
+message CalculateRequest {
+  string expression = 1;
+}
+
+message CalculateResponse {
+  float result = 1;
+} 
+
