@@ -18,7 +18,7 @@ func (e ExpressionParser) Calculate(expression string) (float64, error) {
 	// 预处理表达式：移除空格，统一乘号
 	expr := strings.ReplaceAll(expression, " ", "")
 	expr = strings.ReplaceAll(expr, "×", "*")
-
+	expr = strings.ReplaceAll(expr, "÷", "/")
 	// 使用两个栈：操作数栈和运算符栈
 	var nums []float64
 	var ops []rune
